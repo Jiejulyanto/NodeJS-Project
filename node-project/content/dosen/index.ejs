@@ -1,0 +1,29 @@
+<div class="p-4">
+  <div class="p-4 mt-6 bg-white rounded-lg dark:bg-gray-800">
+    <h1 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Daftar Dosen</h1>
+    <div class="overflow-x-auto">
+      <table class="min-w-full table-auto">
+        <thead class="bg-gray-100 dark:bg-gray-700">
+          <tr>
+            <th class="px-4 py-2 text-left">Nama</th>
+            <th class="px-4 py-2 text-left">NIP</th>
+            <th class="px-4 py-2 text-left">Fakultas</th>
+            <th class="px-4 py-2 text-left">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% dosen.forEach(d => { %>
+          <tr class="border-b dark:border-gray-700">
+            <td class="px-4 py-2"><%= d.nama %></td>
+            <td class="px-4 py-2"><%= d.nip %></td>
+            <td class="px-4 py-2"><%= d.fakultas %></td>
+            <td class="px-4 py-2">
+              <a href="/dosen/edit/<%= d.id %>" class="text-yellow-500 hover:underline">Edit</a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

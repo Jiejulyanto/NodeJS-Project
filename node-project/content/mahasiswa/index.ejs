@@ -1,0 +1,32 @@
+<div class="p-4">
+  <div class="p-4 mt-6 bg-white rounded-lg dark:bg-gray-800">
+    <h1 class="text-xl font-bold mb-4 text-gray-900 dark:text-white">Daftar Mahasiswa</h1>
+    <!-- Tabel Mahasiswa -->
+    <!-- Gunakan template dari products.ejs -->
+    <div class="overflow-x-auto">
+      <table class="min-w-full table-auto">
+        <thead class="bg-gray-100 dark:bg-gray-700">
+          <tr>
+            <th class="px-4 py-2 text-left">Nama</th>
+            <th class="px-4 py-2 text-left">NIM</th>
+            <th class="px-4 py-2 text-left">Jurusan</th>
+            <th class="px-4 py-2 text-left">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% mahasiswa.forEach(mhs => { %>
+          <tr class="border-b dark:border-gray-700">
+            <td class="px-4 py-2"><%= mhs.nama %></td>
+            <td class="px-4 py-2"><%= mhs.nim %></td>
+            <td class="px-4 py-2"><%= mhs.jurusan %></td>
+            <td class="px-4 py-2">
+              <a href="/mahasiswa/detail/<%= mhs.id %>" class="text-blue-600 hover:underline">Detail</a> |
+              <a href="/mahasiswa/edit/<%= mhs.id %>" class="text-yellow-500 hover:underline">Edit</a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
